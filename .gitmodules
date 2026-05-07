@@ -1,0 +1,3 @@
+[submodule "MathStatistics"]
+	path = MathStatistics
+	url = https://github.com/AkimDjan/MathStatsMIPT
