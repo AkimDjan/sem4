@@ -4,3 +4,6 @@
 [submodule "ComputerVision/repo/MIPT_ML_CV"]
 	path = ComputerVision/repo/MIPT_ML_CV
 	url = https://github.com/AkimDjan/MIPT_ML_CV
+[submodule "AdvancedCPPprogramming/hw"]
+	path = AdvancedCPPprogramming/hw
+	url = https://github.com/AkimDjan/AdvancedCPP
