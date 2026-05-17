@@ -44,7 +44,7 @@ private:
 //pimpl.cpp
 //Если что-то подключени в h
 
-//#include "p.h"
+//#include "pimpl.h"
 
 int main() {return 0;}
 

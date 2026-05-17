@@ -3,32 +3,33 @@
 #include <algorithm>
 #include <memory>
 #include <string>
+#include <bits/stdc++.h>
+
 //интерфейс - набор публичных методов класса, которые могут быть вызваны извне
 //пример 1 
 class PersonList;
 class MusicList;
 
 class Person {
-  std::string name;
-  friend PersonList;
+    std::string name;
+    friend PersonList;
 };
 
 class PersonList {
-  std::vector<Person> persons;
+    std::vector<Person> persons;
 public:
-  void sort() {
-    std::sort(persons.begin(), persons.end(),
-      [](Person lhs, Person rhs) {return lhs.name < rhs.name; });
-  }
+    void sort() {
+        std::sort(persons.begin(), persons.end(), [](Person lhs, Person rhs) {return lhs.name < rhs.name; });
+    }
 };
 
 class Music {
-  std::string name;
-  friend MusicList;
+    std::string name;
+    friend MusicList;
 };
 
 class MusicList {
-  std::vector<Music> musics;
+    std::vector<Music> musics;
 public:
   void sort() {
     std::sort(musics.begin(), musics.end(),
@@ -53,14 +54,14 @@ public:
 // пример 2
 class Speakers {
 public:
-  void TurnSound();
-  void IncreaseVolume();
-  void DecreaseVolume();
+    void TurnSound();
+    void IncreaseVolume();
+    void DecreaseVolume();
 };
 
 class Light {
 public:
-  void TurnLight();
+    void TurnLight();
 };
 
 class RC {
@@ -78,32 +79,32 @@ public:
 
 //пример 3
 class Sorter {
-  std::vector<int>* v_;
+    std::vector<int>* v_;
 public:
-  void sort() {
-    if (v_->size() < 10)
-      std::bubble_sort(v_->begin(), v_->end());
-    else
-      std::sort(v_->begin(), v_->end());
-  }
+    void sort() {
+        if (v_->size() < 10)
+            std::bubble_sort(v_->begin(), v_->end());
+        else
+            std::sort(v_->begin(), v_->end());
+    }
 };
 
 enum class DataType {
- Undefined = 0,
-// another types
+    Undefined = 0,
+    // another types
 };
 
 
 template <class T>
 class Data {
-DataType dt_;
+    DataType dt_;
 public:
-T data ;
+    T data ;
 // operators to work with Data
 void ProcessData() {
-  switch (dt_) {
-   // processing depends from types
-  }
+    switch (dt_) {
+      // processing depends from types
+    }
 }
 };
 // здесь нарушен liskov substitution principle, так как если мы заменим Data<int> на Data<float>, то код, 
@@ -114,4 +115,4 @@ void ProcessData() {
 // также нарушен open/closed principle, так как если мы захотим добавить новый тип данных, нам придется изменять 
 // код в классе Data, что нарушает принцип открытости/закрытости. Чтобы исправить эту проблему, мы можем использовать 
 // шаблоны и полиморфизм для обеспечения того, чтобы код мог работать с любыми типами данных без необходимости изменять 
-//код в классе Data.
+// код в классе Data.
